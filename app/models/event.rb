@@ -8,4 +8,5 @@ class Event < ActiveRecord::Base
 			:end => self.end_date,
 			:description => self.description
 		}
+	end
 end
