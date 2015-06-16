@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: skeetersbc_production
-  username: postgres
+  username: deployer
   password: h0lein0ne
