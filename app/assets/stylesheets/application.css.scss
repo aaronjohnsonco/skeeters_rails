@@ -11,15 +11,312 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap-datepicker3
+ *= require redactor-rails
+ *= require fullcalendar
+ *= require fullcal
  *= require_self
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.image-container {background:#222;padding:40px;}
-.team-img {width:100%;}
-.sponsor-img {width:100%;border:2px solid #ddd;margin-bottom:10px;}
-.about {background:#fff;padding:40px 0;}
+@font-face {
+  font-family: 'latoblack';
+  src: font-url('lato-bla-webfont.eot');
+  src: font-url('lato-bla-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-bla-webfont.woff') format('woff'),
+  font-url('lato-bla-webfont.ttf') format('truetype'),
+  font-url('lato-bla-webfont.svg#latoblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
+}
+
+@font-face {
+  font-family: 'latoblack_italic';
+  src: font-url('lato-blaita-webfont.eot');
+  src: font-url('lato-blaita-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-blaita-webfont.woff') format('woff'),
+  font-url('lato-blaita-webfont.ttf') format('truetype'),
+  font-url('lato-blaita-webfont.svg#latoblack_italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latobold';
+  src: font-url('lato-bol-webfont.eot');
+  src: font-url('lato-bol-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-bol-webfont.woff') format('woff'),
+  font-url('lato-bol-webfont.ttf') format('truetype'),
+  font-url('lato-bol-webfont.svg#latobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latobold_italic';
+  src: font-url('lato-bolita-webfont.eot');
+  src: font-url('lato-bolita-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-bolita-webfont.woff') format('woff'),
+  font-url('lato-bolita-webfont.ttf') format('truetype'),
+  font-url('lato-bolita-webfont.svg#latobold_italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latohairline';
+  src: font-url('lato-hai-webfont.eot');
+  src: font-url('lato-hai-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-hai-webfont.woff') format('woff'),
+  font-url('lato-hai-webfont.ttf') format('truetype'),
+  font-url('lato-hai-webfont.svg#latohairline') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latohairline_italic';
+  src: font-url('lato-haiita-webfont.eot');
+  src: font-url('lato-haiita-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-haiita-webfont.woff') format('woff'),
+  font-url('lato-haiita-webfont.ttf') format('truetype'),
+  font-url('lato-haiita-webfont.svg#latohairline_italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latolight';
+  src: font-url('lato-lig-webfont.eot');
+  src: font-url('lato-lig-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-lig-webfont.woff') format('woff'),
+  font-url('lato-lig-webfont.ttf') format('truetype'),
+  font-url('lato-lig-webfont.svg#latolight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latolight_italic';
+  src: font-url('lato-ligita-webfont.eot');
+  src: font-url('lato-ligita-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-ligita-webfont.woff') format('woff'),
+  font-url('lato-ligita-webfont.ttf') format('truetype'),
+  font-url('lato-ligita-webfont.svg#latolight_italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latoregular';
+  src: font-url('lato-reg-webfont.eot');
+  src: font-url('lato-reg-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-reg-webfont.woff') format('woff'),
+  font-url('lato-reg-webfont.ttf') format('truetype'),
+  font-url('lato-reg-webfont.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latoitalic';
+  src: font-url('lato-regita-webfont.eot');
+  src: font-url('lato-regita-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('lato-regita-webfont.woff') format('woff'),
+  font-url('lato-regita-webfont.ttf') format('truetype'),
+  font-url('lato-regita-webfont.svg#latoitalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.latoregular {font-family:'latoregular';}
+.latoblack {font-family:'latoblack';}
+.latolight {font-family:'latolight';}
+.latobold {font-family:'latobold';}
+
+.navbar {margin-bottom:0;}
+
+.link-block {
+  background:#ddd;
+  font-family:'latolight';
+  text-align:center;
+  text-transform:uppercase;
+  font-size:3.0em;
+  padding:10px 0;
+}
+
+.image-container {background:#222;padding:40px;}
+.team-img {margin-bottom:20px;}
+.sponsor-img {width:100%;margin-bottom:10px;}
+.about-container {
+  background:#fff;padding:20px 0 40px 0;
+  p {
+    color:#444;
+    font-family:'latoregular';
+    font-size:1.2em;
+    text-align:center;
+  }
+}
+
+.about-text {font-size:1.2em;}
 .white {color:#fff;}
+
+.banner-container {
+  background-image:asset_url('skeeterWM.png');
+  background-position:center;
+  background-color:#095eaa;
+  background-repeat:no-repeat;
+}
+
+.banner-container-sub {
+  background-image:asset_url('skeeterWM.png');
+  background-position:center;
+  background-color:#095eaa;
+  background-repeat:no-repeat;
+}
+
+.home-top {
+  padding:170px 0 50px 0;
+}
+
+.home-top-sub {
+  padding:60px 0 20px 0;
+}
+
+
+.home-header { font-size:4.0em; }
+.top-container {margin-top:30px;}
+
+.post-title {font-family:'latobold';margin-bottom:0;font-size:1.5em;}
+.post-description {font-family:'latolight';margin-top:0;font-size:1.0em;color:#888;}
+
+
+
+/* CUSTOM NAVBAR */
+.navbar-default {
+  background:transparent;
+  border-color: transparent;
+}
+.navbar-default .navbar-brand {
+  color: #fff;
+  font-family:'latoregular';
+  text-transform:uppercase;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-default .navbar-text {
+  color: #777;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  font-family:'latoregular';
+  text-transform:uppercase;
+  letter-spacing:0;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-default .navbar-link {
+  color: #777;
+}
+.navbar-default .navbar-link:hover {
+  color: #333;
+}
+.redactor-editor {
+  height:300px;
+}
+
+ul.dash_nav {
+  list-style:none;
+  padding-left:0;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-bottom:0;
+  li {
+    display:inline;
+    margin-right:20px;
+  }
+}
+
+.dashboard-nav-container {
+  background:#222;
+}
+
+.sponsor-list {
+  border-top:1px solid #ccc;
+  margin-top:20px;
+}
+
+
+

@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: skeetersbc_production
-  username: skeetersbc
-  password: <%= ENV['SKEETERSBC_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: h0lein0ne

@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
+  resources :players
+
+  resources :coaches
+
+  resources :teams
+
+  mount RedactorRails::Engine => '/redactor_rails'
+  resources :events
+
+  get 'dashboard' => 'dashboard#index'
+  get 'dashboard/posts' => 'dashboard#posts'
+  get 'dashboard/events' => 'dashboard#events'
+  get 'dashboard/coaches' => 'dashboard#coaches'
+  get 'dashboard/players' => 'dashboard#players'
+
+  resources :posts
+
   get 'pages/home'
+  get 'calendar' => 'pages#calendar'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
