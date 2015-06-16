@@ -2,7 +2,7 @@
 # lock '3.1.0'
 
 set :application, 'skeetersbc'
-set :repo_url, 'git@git.com:insomniapplabs/skeeters_rails.git'
+set :repo_url, 'https://insomniapplabs:h0lein0ne@github.com/insomniapplabs/skeeters_rails.git'
 
 set :deploy_to, '/home/deployer/skeetersbc'
 
