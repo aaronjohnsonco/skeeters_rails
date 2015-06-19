@@ -20,6 +20,7 @@
         <li><a href="/calendar">Calendar</a></li>
         <li><a href="#">Teams</a></li>
         <% if current_user.present? %>
+        <li><%= link_to "Dashboard", dashboard_path %></li>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
         <% end %>
 
