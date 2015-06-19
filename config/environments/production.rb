@@ -32,17 +32,7 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { host: 'skeetersbaseballclub.com'}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => 'smtp.sendgred.net',
-    :port => '587',
-    :authentication => :plain,
-    :user_name => 'aaronjohnsonis',
-    :password => 'h0lein0ne',
-    :domain => 'skeetersbaseballclub.com',
-    :enable_starttls_auto => true
-  }
+  
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
@@ -91,4 +81,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: 'www.skeetersbaseballclub.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :authentication => :plain,
+    :user_name => 'aaronjohnsonis',
+    :password => 'h0lein0ne',
+    :domain => 'skeetersbaseballclub.com',
+    :enable_starttls_auto => true
+  }
+
+
 end
