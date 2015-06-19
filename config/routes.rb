@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'dashboard/players' => 'dashboard#players'
   get 'calendar' => 'pages#calendar'
   get 'tryouts' => 'pages#tryouts'
-  get 'sbc-login' => 'sessions#new'
+  post 'sbc-login' => 'sessions#new'
   get 'sbc-signup' => 'users#new'
   get 'logout' => 'sessions#destroy'
 
