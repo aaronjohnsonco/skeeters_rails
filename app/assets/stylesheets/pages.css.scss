@@ -1,3 +1,82 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.tryout-container {
+	padding-bottom:50px;
+	p {
+		font-family:'latolight';
+		font-size:1.2em;
+	}
+}
+.tryout-form-container {
+	input[type="text"] {
+		border-radius:2px;
+		font-family:'latoregular';
+		border-color:#ddd;
+	}
+	input[type="text"]:focus {
+		border-color:#ccc;
+		box-shadow:none;
+	}
+	input[type="submit"] {
+		border-radius:2px;
+	}
+	input[type="submit"]:hover {
+		color:#fff;
+	}
+}
+
+.link-container {
+	p {
+		font-family:'latolight';
+		font-size:1.2em;
+	}
+}
+
+
+.btn-blue {
+  color: #fff;
+  background-color: #04469C;
+  border-color: #04469C;
+  text-transform:uppercase;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue.focus,
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  color: #fff;
+  background-color: #04469C;
+  border-color: #04469C;
+}
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  background-image: none;
+}
+.btn-blue.disabled,
+.btn-blue[disabled],
+fieldset[disabled] .btn-blue,
+.btn-blue.disabled:hover,
+.btn-blue[disabled]:hover,
+fieldset[disabled] .btn-blue:hover,
+.btn-blue.disabled:focus,
+.btn-blue[disabled]:focus,
+fieldset[disabled] .btn-blue:focus,
+.btn-blue.disabled.focus,
+.btn-blue[disabled].focus,
+fieldset[disabled] .btn-blue.focus,
+.btn-blue.disabled:active,
+.btn-blue[disabled]:active,
+fieldset[disabled] .btn-blue:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-blue .badge {
+  color: #fff;
+  background-color: #333;
+}

@@ -1,0 +1,86 @@
+<div class="banner-container-sub">
+  <%= render 'partials/navbar' %>
+  <div class="home-top-sub">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="latoblack white home-header">Skeeters Baseball Club</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-container-sub">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="tryout-container">
+        	<h2 class="latolight">2015/2016 Season Tryouts</h2>
+        	<p>We will be holding an open tryout on July 25th for our 7U, 8U, 9U, 10U, and 11U teams. If your child is interested in trying out please fill out the form below, or download the pdf and fax it to 804-234-2343.</p>
+        	<p>All forms must be turned in by July 15th. The times for the tryout will be posted on <%= link_to "Facebook", "" %> and under the annoucement section on our home page. If your child is unable to attend the tryout on this day please contact Patrick Walk at 615-294-9709.</p>
+        	<p><%= link_to "Tryout Form PDF", "/tryout_pdf/2016Tryouts.pdf" %>
+        	<div class="tryout-form-container">
+        		<%= form_for Candidate.new do |f| %>
+        			<h3 class="latobold">Player Information</h3>
+        			<div class="form-group">
+        				<label>Player Name</label>
+        				<%= f.text_field :player_name, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>Player DOB</label>
+        				<%= f.text_field :dob, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>Player Name</label>
+        				<%= f.text_field :player_experience, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>City of Residence</label>
+        				<%= f.text_field :city_of_residence, class: 'form-control' %>
+        			</div>
+
+        			<h3 class="latobold">Parent or Guardian Information</h3>
+
+        			<h4 class="latoregular">Primary Contact</h4>
+        			<div class="form-group">
+        				<label>Name</label>
+        				<%= f.text_field :contact1_name, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>Phone</label>
+        				<%= f.text_field :contact1_phone, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>Email</label>
+        				<%= f.text_field :contact1_email, class: 'form-control' %>
+        			</div>
+        			<h4 class="latoregular">Secondary Contact</h4>
+        			<div class="form-group">
+        				<label>Name</label>
+        				<%= f.text_field :contact2_name, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>Phone</label>
+        				<%= f.text_field :contact2_phone, class: 'form-control' %>
+        			</div>
+        			<div class="form-group">
+        				<label>Email</label>
+        				<%= f.text_field :contact2_email, class: 'form-control' %>
+        			</div>
+
+        			<%= f.submit "Submit Tryout Registration", class: "btn btn-blue" %>
+         		<% end %>
+        	</div>
+      	</div>
+      </div>
+      <div class="col-md-offset-1 col-md-3">
+      	<div class="link-container">
+      		<h2 class="latolight">Contact</h2>
+      		<p>Facebook: <%= link_to "Skeeters Baseball Club", "" %></p>
+      		<p>Email: <%= mail_to "skeetersballclub@gmail.com" %></p>
+      		<p>Phone: Patrick Walk 615-294-9709</p>
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>

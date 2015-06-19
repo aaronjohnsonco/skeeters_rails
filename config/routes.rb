@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :candidates
+
   resources :players
 
   resources :coaches
@@ -13,11 +15,13 @@ Rails.application.routes.draw do
   get 'dashboard/events' => 'dashboard#events'
   get 'dashboard/coaches' => 'dashboard#coaches'
   get 'dashboard/players' => 'dashboard#players'
-
+  get 'calendar' => 'pages#calendar'
+  get 'tryouts' => 'pages#tryouts'
+  #get 'pages/home'
   resources :posts
 
-  get 'pages/home'
-  get 'calendar' => 'pages#calendar'
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
