@@ -32,6 +32,18 @@ Rails.application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
+  config.action_mailer.default_url_options = { host: 'skeetersbaseballclub.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.sendgred.net',
+    :port => '587',
+    :authentication => :plain,
+    :user_name => 'aaronjohnsonis',
+    :password => 'h0lein0ne',
+    :domain => 'skeetersbaseballclub.com',
+    :enable_starttls_auto => true
+  }
+
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.

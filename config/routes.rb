@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'sbc-login' => 'sessions#new'
   post 'sbc-login' => 'sessions#create'
   get 'sbc-signup' => 'users#new'
-  get 'logout' => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy'
 
   #get 'pages/home'
   resources :posts

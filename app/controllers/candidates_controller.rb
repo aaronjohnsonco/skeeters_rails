@@ -3,6 +3,8 @@ class CandidatesController < ApplicationController
 	def create
 		@candidate = Candidate.new(candidate_params)
 		if @candidate.save
+			RegistrationMailer.registration_email(@candidate).deliver
+			RegistrationMailer.registration_confirmation_email(@candidate).deliver
 			redirect_to root_path
 		else
 			redirect_to tryout_path

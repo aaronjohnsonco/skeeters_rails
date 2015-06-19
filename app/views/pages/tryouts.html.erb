@@ -31,7 +31,7 @@
         				<%= f.text_field :dob, class: 'form-control' %>
         			</div>
         			<div class="form-group">
-        				<label>Player Name</label>
+        				<label>Player Experience</label>
         				<%= f.text_field :player_experience, class: 'form-control' %>
         			</div>
         			<div class="form-group">
@@ -70,6 +70,7 @@
 
         			<%= f.submit "Submit Tryout Registration", class: "btn btn-blue" %>
          		<% end %>
+            <p class="confirmation-link">You should receive a confirmation email. If you do not receive an email please email us at <%= mail_to "skeetersballclub@gmail.com" %> to confirm that we received your registration form.</p>
         	</div>
       	</div>
       </div>
