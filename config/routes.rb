@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  resources :users
+
   resources :candidates
 
   resources :players
@@ -17,6 +21,10 @@ Rails.application.routes.draw do
   get 'dashboard/players' => 'dashboard#players'
   get 'calendar' => 'pages#calendar'
   get 'tryouts' => 'pages#tryouts'
+  get 'sbc-login' => 'sessions#new'
+  get 'sbc-signup' => 'users#new'
+  get 'logout' => 'sessions#destroy'
+
   #get 'pages/home'
   resources :posts
 

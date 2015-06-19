@@ -1,5 +1,7 @@
 class DashboardController < ApplicationController
 
+  #before_action :require_user
+
   def index
     @recent_posts = Post.all
     @current_teams = Team.all

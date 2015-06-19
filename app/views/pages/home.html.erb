@@ -29,7 +29,7 @@
           <p class="post-title">No new announcements.</p>
         <% end %>
         <% for post in @posts %>
-          <p class="post-title"><a href=""><%= post.title %></a></p>
+          <p class="post-title"><%= link_to post.title, post %></p>
           <p class="post-description">Posted on <%= post.date.strftime("%B %-d, %Y") %></p>
         <% end %>
         <h2 class="latolight">Upcoming Events</h2>
