@@ -9,9 +9,9 @@
     <div class="col-md-9">
       <h2 class="latolight">Recent Posts</h2>
       <% for post in @recent_posts %>
-
+        <p class="latolight main-text"><%= post.title %></p>
       <% end %>
-      <p>View all posts</p>
+      <p><%= link_to "View all posts", dashboard_posts_path %></p>
       <h2 class="latolight">Upcoming Events</h2>
       <p>View all events</p>
     </div>
