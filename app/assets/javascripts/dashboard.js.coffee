@@ -4,6 +4,10 @@
 ready = ->
   $('#date_picker input').datepicker
     format: 'yyyy-mm-dd'
+  $('#start_date_picker input').datepicker
+    format: 'yyyy-mm-dd'
+  $('#end_date_picker input').datepicker
+    format: 'yyyy-mm-dd'
   $('.add-team-form').hide()
   $('#add-team-btn').click ->
   	event.preventDefault()
@@ -13,7 +17,6 @@ ready = ->
   	$('.add-team-form').hide()
   	$('#add-team-btn').fadeIn(600)
   return
-  
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
-  

@@ -5,14 +5,31 @@
       <h1 class="latoblack">Announcements</h1>
       <% if @posts.blank? %>
         <h3 class="latobold">Currently no announcements created.</h3>
-      <% end %>
-      <% for post in @posts %>
-        <p><%= post.title %></p>
-        <p><%= post.body %></p>
-        <p><%= post.status %></p>
-        <p><%= post.date.strftime("%m %d, %y") %></p>
-        <p><%= link_to "Edit post", edit_post_path(post) %></p>
-
+      <% else %>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Event</th>
+          <th>Event Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for post in @posts %>
+        <tr>
+          <td>
+            <p class="latolight"><%= post.title %></p>
+          </td>
+          <td>
+            <p class="latolight"><%= post.status %></p>
+          </td>
+          <td>
+            <p class="latolight"><%= link_to "Edit post", edit_post_path(post) %></p>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
       <% end %>
     </div>
     <div class="col-md-5">

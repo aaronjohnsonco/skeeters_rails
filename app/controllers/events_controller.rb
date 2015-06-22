@@ -2,19 +2,22 @@ class EventsController < ApplicationController
 
   def create
   	@event = Event.new(event_params)
-  	if @event.save 
-  		respond_to do |format|
-  			format.html
-  			format.json {render json:@events.to_json}
-  		end
+  	if @event.save
+  		redirect_to dashboard_events_path
   	else
-
+      redirect_to dashboard_events_path
   	end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to dashboard_events_path
   end
 
   private
     def event_params
-      params.require(:event).permit(:title, :start_date, :end_date, :description, :team, :type)
+      params.require(:event).permit(:title, :start_date, :end_date, :description, :team, :event_type, :team_id)
     end
 
 end

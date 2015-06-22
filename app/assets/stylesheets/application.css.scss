@@ -296,6 +296,11 @@
 }
 .redactor-editor {
   height:300px;
+  z-index:1;
+}
+.redactor-toolbar,
+.redactor-dropdown {
+  z-index: 1 !important;
 }
 
 ul.dash_nav {
@@ -318,6 +323,3 @@ ul.dash_nav {
   border-top:1px solid #ccc;
   margin-top:20px;
 }
-
-
-

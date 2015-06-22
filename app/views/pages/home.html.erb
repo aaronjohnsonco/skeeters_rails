@@ -38,9 +38,9 @@
         <% end %>
         <% for event in @events %>
           <p class="post-title"><a href=""><%= event.title %></a></p>
-          <p class="post-description"><%= event.date.strftime('%B %-d, %Y') %></p>
+          <p class="post-description"><%= event.start_date.strftime('%B %-d, %Y') %></p>
         <% end %>
-        
+
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
 
 
 

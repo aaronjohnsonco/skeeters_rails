@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.friendly.find(params[:id])
+    @post = Post.friendly.find(params[:id])x
     if params[:update]  
       @post.update(post_params)
       redirect_to dashboard_posts_path

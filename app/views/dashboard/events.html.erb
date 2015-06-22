@@ -5,9 +5,41 @@
       <h1 class="latoblack">Events</h1>
       <% if @events.blank? %>
         <h3 class="latobold">Currently no events created.</h3>
-      <% end %>
-      <% for event in @events %>
-        
+      <% else %>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Event</th>
+          <th>Event Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for event in @events %>
+          <tr>
+            <td>
+          <p class="latobold"><%= event.title %></p>
+        </td>
+        <td>
+          <% if event.end_date.blank? %>
+            <p class="latolight"><%= event.start_date.strftime('%B %-d') %></p>
+          <% elsif event.end_date.present? && event.start_date.strftime('%B') === event.end_date.strftime('%B') %>
+            <p class="latolight"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%-d') %></p>
+          <% elsif event.end_date.present? && event.start_date.strftime('%B') != event.end_date.strftime('%B') %>
+            <p class="latolight"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%B %-d') %></p>
+          <% end %>
+        </td>
+        <td>
+          <p class="latolight pull-right">
+            <%= link_to "Edit", edit_event_path(event) %> |
+            <%= link_to "Delete", event, method: :delete %>
+        </td>
+        <% end %>
+          <tr>
+      </tbody>
+
+      </table>
       <% end %>
     </div>
     <div class="col-md-5">
@@ -19,22 +51,22 @@
         </div>
         <div class="form-group" id="start_date_picker">
           <label class="sr-only">Start Date</label>
-          <%= f.text_field :start_date, class: 'form-control', placeholder: 'Pub Date' %>
+          <%= f.text_field :start_date, class: 'form-control', placeholder: 'Start Date' %>
         </div>
-        <div class="form-group" id="end">
+        <div class="form-group" id="end_date_picker">
           <label class="sr-only">End Date</label>
-          <%= f.text_field :end_date, class: 'form-control', placeholder: 'Pub Date' %>
+          <%= f.text_field :end_date, class: 'form-control', placeholder: 'End Date' %>
         </div>
-        
+
 
         <div class="form-group">
           <label class="sr-only">Team</label>
-          <%= f.select(:team, options_for_select(['8U', '9U', '10U', 'All Teams']), {prompt: '-- select team --'}, class: 'form-control') %>
+          <%= f.collection_select(:team, Team.all, :id, :name, {prompt: '-- select team--' }, class: 'form-control') %>
         </div>
 
         <div class="form-group">
           <label class="sr-only">Type</label>
-          <%= f.select(:type, options_for_select(['Practice', 'Scrimmage']), {prompt: '-- select event type --'}, class: 'form-control') %>
+          <%= f.select(:event_type, options_for_select(['Practice', 'Scrimmage', 'Game', 'Tournament']), {prompt: '-- select event type --'}, class: 'form-control') %>
         </div>
 
         <div class="form-group">

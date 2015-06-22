@@ -25,12 +25,13 @@ Rails.application.routes.draw do
   post 'sbc-login' => 'sessions#create'
   get 'sbc-signup' => 'users#new'
   delete 'logout' => 'sessions#destroy'
+  delete 'dashboard/events' => 'events#destroy'
 
   #get 'pages/home'
   resources :posts
 
-  
-  
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
