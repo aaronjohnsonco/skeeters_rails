@@ -19,6 +19,20 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
   end
 
+  def edit
+    @post = Post.friendly.find(params[:id])
+  end
+
+  def update
+    @post = Post.friendly.find(params[:id])
+    if params[:update]  
+      @post.update(post_params)
+      redirect_to dashboard_posts_path
+    else
+      redirect_to dashboard_posts_path
+    end
+  end
+
   private
 
     def post_params

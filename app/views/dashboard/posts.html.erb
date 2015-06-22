@@ -10,7 +10,9 @@
         <p><%= post.title %></p>
         <p><%= post.body %></p>
         <p><%= post.status %></p>
-        <%= post.date.strftime("%m %d, %y") %>
+        <p><%= post.date.strftime("%m %d, %y") %></p>
+        <p><%= link_to "Edit post", edit_post_path(post) %></p>
+
       <% end %>
     </div>
     <div class="col-md-5">
