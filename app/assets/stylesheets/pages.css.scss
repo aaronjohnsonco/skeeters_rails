@@ -18,6 +18,15 @@
 		border-color:#ccc;
 		box-shadow:none;
 	}
+	select {
+		border-radius:2px;
+		font-family:'latoregular';
+		border-color:#ddd;
+	}
+	select:focus {
+		border-color:#ccc;
+		box-shadow:none;
+	}
 	input[type="submit"] {
 		border-radius:2px;
 	}
