@@ -7,7 +7,7 @@ class CandidatesController < ApplicationController
 			RegistrationMailer.registration_confirmation_email(@candidate).deliver
 			redirect_to root_path
 		else
-			redirect_to tryout_path
+			redirect_to tryouts_path
 		end
 	end
 

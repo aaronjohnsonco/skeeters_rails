@@ -20,27 +20,32 @@
         	<p>All forms must be turned in by July 15th. The times for the tryout will be posted on <%= link_to "Facebook", "https://www.facebook.com/skeetersbaseballclub" %> and under the announcement section on our home page. If your child is unable to attend the tryout on this day please contact Patrick Walk at 615-294-9709.</p>
         	<p><%= link_to "Tryout Form PDF", "/tryout_pdf/2016Tryouts.pdf" %>
         	<div class="tryout-form-container">
-        		<%= form_for Candidate.new do |f| %>
+
+            
+
+
+        		<%= form_for @candidate do |f| %>
+
         			<h3 class="latobold">Player Information</h3>
               <div class="form-group">
-                <label>Select Team</label>
+                <label>Select Team *</label>
                 <%= f.select(:team, options_for_select(['7U', '8U', '9U', '10U', '11U']), {prompt: '-- select team --'}, class: 'form-control') %>
               </div>
 
         			<div class="form-group">
-        				<label>Player Name</label>
+        				<label>Player Name *</label>
         				<%= f.text_field :player_name, class: 'form-control' %>
         			</div>
         			<div class="form-group">
-        				<label>Player DOB</label>
+        				<label>Player DOB *</label>
         				<%= f.text_field :dob, class: 'form-control' %>
         			</div>
         			<div class="form-group">
-        				<label>Player Experience</label>
+        				<label>Player Experience *</label>
         				<%= f.text_field :player_experience, class: 'form-control' %>
         			</div>
         			<div class="form-group">
-        				<label>City of Residence</label>
+        				<label>City of Residence *</label>
         				<%= f.text_field :city_of_residence, class: 'form-control' %>
         			</div>
 
@@ -48,15 +53,15 @@
 
         			<h4 class="latoregular">Primary Contact</h4>
         			<div class="form-group">
-        				<label>Name</label>
+        				<label>Name *</label>
         				<%= f.text_field :contact1_name, class: 'form-control' %>
         			</div>
         			<div class="form-group">
-        				<label>Phone</label>
+        				<label>Phone *</label>
         				<%= f.text_field :contact1_phone, class: 'form-control' %>
         			</div>
         			<div class="form-group">
-        				<label>Email</label>
+        				<label>Email *</label>
         				<%= f.text_field :contact1_email, class: 'form-control' %>
         			</div>
         			<h4 class="latoregular">Secondary Contact</h4>
@@ -72,7 +77,7 @@
         				<label>Email</label>
         				<%= f.text_field :contact2_email, class: 'form-control' %>
         			</div>
-
+              <p><span class="latobold">* denotes a required field</span></p>
         			<%= f.submit "Submit Registration", class: "btn btn-blue" %>
          		<% end %>
             <p class="confirmation-link">You should receive a confirmation email. If not, please email us at <%= mail_to "skeetersballclub@gmail.com" %> to confirm that we received your registration form.</p>

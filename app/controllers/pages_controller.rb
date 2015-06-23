@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def tryouts
-  	
+  	@candidate = Candidate.new
   end
 
 end
