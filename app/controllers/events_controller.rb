@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+  def index
+    @events = Event.all
+  end
+
   def create
   	@event = Event.new(event_params)
   	if @event.save
@@ -7,6 +11,10 @@ class EventsController < ApplicationController
   	else
       redirect_to dashboard_events_path
   	end
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   def destroy
@@ -17,7 +25,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:title, :start_date, :end_date, :description, :team, :event_type, :team_id)
+      params.require(:event).permit(:title, :location, :start_date, :end_date, :description, :team, :event_type, :team_id)
     end
 
 end

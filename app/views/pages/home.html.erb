@@ -31,15 +31,23 @@
         <% end %>
         <% for post in @posts %>
           <p class="post-title"><%= link_to post.title, post %></p>
-          <p class="post-description">Posted on <%= post.date.strftime("%B %-d, %Y") %></p>
+          <p class="post-description">Posted on <%= post.date.strftime("%B %-d") %></p>
         <% end %>
         <h2 class="latolight">Upcoming Events</h2>
         <% if @events.blank? %>
           <p class="post-title">No events scheduled.</p>
         <% end %>
         <% for event in @events %>
-          <p class="post-title"><a href=""><%= event.title %></a></p>
-          <p class="post-description"><%= event.start_date.strftime('%B %-d, %Y') %></p>
+          <p class="post-title"><%= link_to event.title, event %></p>
+          
+            <% if event.end_date.blank? %>
+            <p class="post-description"><%= event.start_date.strftime('%B %-d') %></p>
+          <% elsif event.end_date.present? && event.start_date.strftime('%B') === event.end_date.strftime('%B') %>
+            <p class="post-description"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%-d') %></p>
+          <% elsif event.end_date.present? && event.start_date.strftime('%B') != event.end_date.strftime('%B') %>
+            <p class="post-description"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%B %-d') %></p>
+          <% end %>
+          
         <% end %>
 
       </div>

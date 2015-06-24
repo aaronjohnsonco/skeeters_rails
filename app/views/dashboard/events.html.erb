@@ -47,7 +47,11 @@
       <%= form_for Event.new do |f| %>
         <div class="form-group">
           <label class="sr-only">Title</label>
-          <%= f.text_field :title, class: 'form-control', placeholder: 'Post Title' %>
+          <%= f.text_field :title, class: 'form-control', placeholder: 'Event Title' %>
+        </div>
+        <div class="form-group">
+          <label class="sr-only">Location</label>
+          <%= f.text_field :location, class: 'form-control', placeholder: 'Event Location' %>
         </div>
         <div class="form-group" id="start_date_picker">
           <label class="sr-only">Start Date</label>
