@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'sbc-signup' => 'users#new'
   delete 'logout' => 'sessions#destroy'
   delete 'dashboard/events' => 'events#destroy'
+  delete 'dashboard/posts' => 'posts#destroy'
 
   #get 'pages/home'
   resources :posts

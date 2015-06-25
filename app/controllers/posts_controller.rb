@@ -33,6 +33,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.friendly.find(params[:id])
+    @post.destroy
+    redirect_to dashboard_posts_path
+  end
+
   private
 
     def post_params
