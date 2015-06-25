@@ -13,6 +13,16 @@ class EventsController < ApplicationController
   	end
   end
 
+  def update
+    @event = Event.find(params[:id])
+    if @event.save
+      @event.update(event_params)
+      redirect_to dashboard_events_path
+    else
+      redirect_to dashboard_events_path
+    end
+  end
+
   def show
     @event = Event.find(params[:id])
   end
