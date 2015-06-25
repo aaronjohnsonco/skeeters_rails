@@ -1,15 +1,24 @@
-<%= form_for @post do |f| %>
-  <div class="form-group">
-    <label class="sr-only">Title</label>
-    <%= f.text_field :title, class: 'form-control', placeholder: 'Post Title' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <%= form_for @post do |f| %>
+    <div class="form-group">
+      <label class="sr-only">Title</label>
+      <%= f.text_field :title, class: 'form-control', placeholder: 'Post Title' %>
+    </div>
+    <div class="form-group" id="date_picker">
+      <label class="sr-only">Date</label>
+      <%= f.text_field :date, class: 'form-control', placeholder: 'Pub Date' %>
+    </div>
+    <div class="form-group">
+      <label class="sr-only">Body</label>
+      <%= f.text_area :body, class: 'form-control redactor' %>
+    </div>
+    <%= f.submit "Publish Post", class: 'btn btn-blue', name: 'update' %>
+  <% end %>
+    </div>
   </div>
-  <div class="form-group" id="date_picker">
-    <label class="sr-only">Date</label>
-    <%= f.text_field :date, class: 'form-control', placeholder: 'Pub Date' %>
-  </div>
-  <div class="form-group">
-    <label class="sr-only">Body</label>
-    <%= f.text_area :body, class: 'form-control redactor' %>
-  </div>
-  <%= f.submit "Publish Post", class: 'btn btn-default', name: 'update' %>
-<% end %>
+</div>
+
+
+

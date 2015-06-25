@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
 
   def posts
     @posts = Post.order('created_at desc')
+    
   end
 
   def events
