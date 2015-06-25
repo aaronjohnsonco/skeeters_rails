@@ -15,8 +15,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    if @event.save
-      @event.update(event_params)
+    if @event.update(event_params)
       redirect_to dashboard_events_path
     else
       redirect_to dashboard_events_path
