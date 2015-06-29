@@ -6,6 +6,8 @@
       <% if @events.blank? %>
         <h3 class="latobold">Currently no events created.</h3>
       <% else %>
+
+    <div class="table-responsive">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -42,6 +44,8 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+
       <% end %>
     </div>
   </div>
