@@ -14,7 +14,7 @@ class CandidatesController < ApplicationController
 	private
 
 		def candidate_params
-			params.require(:candidate).permit(:player_name, :dob, :player_experience, :city_of_residence, :contact1_name, :contact1_phone, :contact1_email, :contact2_name, :contact2_phone, :contact2_email)
+			params.require(:candidate).permit(:player_name, :dob, :player_experience, :city_of_residence, :contact1_name, :contact1_phone, :contact1_email, :contact2_name, :contact2_phone, :contact2_email, :team)
 		end
 
 end
