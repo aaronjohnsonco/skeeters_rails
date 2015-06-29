@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-
+	
 	#def as_json(options = {}) 
 	#	{
 	#		:id => self.id,

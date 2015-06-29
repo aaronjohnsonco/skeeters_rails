@@ -1,54 +1,62 @@
 <%= render 'dashboard_navbar' %>
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
-      <h1 class="latoblack">Events</h1>
+    <div class="col-md-12">
+      <h1 class="latoblack">Events <span class="pull-right"><a href="" class="btn btn-blue" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></span></h1>
       <% if @events.blank? %>
         <h3 class="latobold">Currently no events created.</h3>
       <% else %>
-
       <table class="table table-striped">
         <thead>
-        <tr>
-          <th>Event</th>
-          <th>Event Date</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for event in @events %>
+          <tr>
+            <th>Event</th>
+            <th>Event Date</th>
+            <th>Event Type</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for event in @events %>
           <tr>
             <td>
-          <p class="latobold"><%= event.title %></p>
-        </td>
-        <td>
-          <% if event.end_date.blank? %>
-            <p class="latolight"><%= event.start_date.strftime('%B %-d') %></p>
-          <% elsif event.end_date.present? && event.start_date.strftime('%B') === event.end_date.strftime('%B') %>
-            <p class="latolight"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%-d') %></p>
-          <% elsif event.end_date.present? && event.start_date.strftime('%B') != event.end_date.strftime('%B') %>
-            <p class="latolight"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%B %-d') %></p>
-          <% end %>
-        </td>
-        <td>
-          <p class="latolight text-right">
-
-            <a href="" id="edit-event-btn" data-toggle="modal" data-target="#editEventModal-<%= event.id %>">Edit</a> |
-            <%= link_to "Delete", event, method: :delete %>
-        </td>
-        
+              <p class="latobold"><%= event.title %></p>
+            </td>
+            <td>
+            <% if event.end_date.blank? %>
+              <p class="latolight"><%= event.start_date.strftime('%B %-d') %></p>
+              <% elsif event.end_date.present? && event.start_date.strftime('%B') === event.end_date.strftime('%B') %>
+              <p class="latolight"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%-d') %></p>
+              <% elsif event.end_date.present? && event.start_date.strftime('%B') != event.end_date.strftime('%B') %>
+              <p class="latolight"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%B %-d') %></p>
+            <% end %>
+            </td>
+            <td>
+              <p class="latolight"><%= event.event_type %></p>
+            </td>
+            <td>
+              <p class="latolight text-right">
+              <%= link_to "Edit", edit_event_path(event) %> |
+              <%= link_to "Delete", event, method: :delete %>
+            </td>
           </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
-<div class="modal fade" id="editEventModal-<%= event.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="latoregular"><%= event.title %></h3>
-        <%= form_for event do |f| %>
-          <div class="form-group">
+        <h3 class="latoregular">Add New Post</h3>
+        <%= form_for Event.new do |f| %>
+        <div class="form-group">
           <label class="sr-only">Title</label>
           <%= f.text_field :title, class: 'form-control', placeholder: 'Event Title' %>
         </div>
@@ -73,14 +81,14 @@
 
         <div class="form-group">
           <label class="sr-only">Type</label>
-          <%= f.select(:event_type, options_for_select(['Practice', 'Scrimmage', 'Game', 'Tournament'], selected: f.object.event_type), {},class: 'form-control') %>
+          <%= f.select(:event_type, options_for_select(['Practice', 'Scrimmage', 'Game', 'Tournament']), {prompt: "-- select event type --"},class: 'form-control') %>
         </div>
 
         <div class="form-group">
           <label class="sr-only">Body</label>
           <%= f.text_area :description, class: 'form-control redactor' %>
         </div>
-          <%= f.submit "Update Event", class: 'btn btn-blue' %>
+          <%= f.submit "Publish Event", class: 'btn btn-blue' %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <% end %>
       </div>
@@ -92,58 +100,5 @@
   </div>
 </div>
 <!-- End MODAL -->
-
-
-
-
-          <% end %>
-      </tbody>
-
-      </table>
-      <% end %>
-    </div>
-    <div class="col-md-5">
-      <h3 class="latolight">Add New Event</h3>
-      <%= form_for Event.new do |f| %>
-        <div class="form-group">
-          <label class="sr-only">Title</label>
-          <%= f.text_field :title, class: 'form-control', placeholder: 'Event Title' %>
-        </div>
-        <div class="form-group">
-          <label class="sr-only">Location</label>
-          <%= f.text_field :location, class: 'form-control', placeholder: 'Event Location' %>
-        </div>
-        <div class="form-group" id="start_date_picker">
-          <label class="sr-only">Start Date</label>
-          <%= f.text_field :start_date, class: 'form-control', placeholder: 'Start Date' %>
-        </div>
-        <div class="form-group" id="end_date_picker">
-          <label class="sr-only">End Date</label>
-          <%= f.text_field :end_date, class: 'form-control', placeholder: 'End Date' %>
-        </div>
-
-
-        <div class="form-group">
-          <label class="sr-only">Team</label>
-          <%= f.collection_select(:team, Team.all, :id, :name, {prompt: '-- select team--' }, class: 'form-control') %>
-        </div>
-
-        <div class="form-group">
-          <label class="sr-only">Type</label>
-          <%= f.select(:event_type, options_for_select(['Practice', 'Scrimmage', 'Game', 'Tournament']), {prompt: '-- select event type --'}, class: 'form-control') %>
-        </div>
-
-        <div class="form-group">
-          <label class="sr-only">Body</label>
-          <%= f.text_area :description, class: 'form-control redactor' %>
-        </div>
-
-
-
-        <%= f.submit "Add Event", class: 'btn btn-blue', name: 'publish' %>
-      <% end %>
-    </div>
-  </div>
-</div>
 
 
