@@ -3,6 +3,7 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
+require 'capistrano/figaro_yml'
 
 # Includes tasks from other gems included in your Gemfile
 #
@@ -18,7 +19,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 # require 'capistrano/rvm'
 require 'capistrano/rbenv'
-require 'capistrano/figaro_yml'
+
 set :rbenv_type, :user
 set :rbenv_ruby, '2.2.1'
 # require 'capistrano/chruby'
