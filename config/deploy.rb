@@ -39,6 +39,16 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+namespace :figaro do      
+   desc "Transfer Figaro's application.yml to shared/config"
+   task :upload do
+     on roles(:all) do
+       upload! "config/application.yml", "#{shared_path}/config/application.yml"
+     end
+   end
+ end
+ before "deploy:check", "figaro:upload"
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -51,3 +61,5 @@ namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
+
+
