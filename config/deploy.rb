@@ -49,7 +49,7 @@ namespace :deploy do
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-
+  before "deploy:check", "figaro:upload"
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end

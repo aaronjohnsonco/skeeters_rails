@@ -6,4 +6,4 @@ namespace :figaro do
      end
    end
  end
- before "deploy:check", "figaro:upload"
+ 
