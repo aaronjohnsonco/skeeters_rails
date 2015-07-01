@@ -61,3 +61,5 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 gem 'friendly_id', '~> 5.1.0'
 gem 'html5_validators'
 
+gem 'figaro'
+
