@@ -4,10 +4,22 @@
 ready = ->
   $('#date_picker input').datepicker
     format: 'yyyy-mm-dd'
+    autoclose: true
+    todayBtn: true
+    todayHighlight: true
+    orientation: "top"
   $('#start_date_picker input').datepicker
     format: 'yyyy-mm-dd'
+    autoclose: true
+    todayBtn: true
+    todayHighlight: true
+    orientation: "top"
   $('#end_date_picker input').datepicker
     format: 'yyyy-mm-dd'
+    autoclose: true
+    todayBtn: true
+    todayHighlight: true
+    orientation: "top"
   $('.add-team-form').hide()
   $('#add-team-btn').click ->
   	event.preventDefault()
