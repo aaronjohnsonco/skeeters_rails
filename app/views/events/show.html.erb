@@ -1,0 +1,33 @@
+<div class="banner-container-sub">
+  <%= render 'partials/navbar' %>
+  <div class="home-top-sub">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="latoblack white home-header">Skeeters Baseball Club</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="top-container-sub">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="latolight"><%= @event.title %></h1>
+        <div class="post-body-container">
+          <%= sanitize @event.description %>
+        </div>
+      </div>
+      <div class="col-md-offset-1 col-md-3">
+        <div class="link-container">
+          <h2 class="latolight">Contact</h2>
+          <p>Facebook: <%= link_to "Skeeters Baseball Club", "" %></p>
+          <p>Email: <%= mail_to "skeetersballclub@gmail.com" %></p>
+          <p>Phone: Patrick Walk 615-294-9709</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

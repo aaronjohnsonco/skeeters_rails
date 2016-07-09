@@ -1,0 +1,29 @@
+<%= render 'dashboard_navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h1 class="latoblack">Coaches</h1>
+      <% if @coaches.blank? %>
+        <h3 class="latobold">Currently no coaches created.</h3>
+      <% end %>
+      <% for coach in @coaches %>
+        
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <h3 class="latolight">Add New Coach</h3>
+      <%= form_for Coach.new do |f| %>
+        <div class="form-group">
+          <label class="sr-only">Name</label>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'First and Last Name' %>
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only">Coach Position</label>
+          <%= f.select(:type, options_for_select(['Head', 'Assistant', 'Pitching', 'Batting', 'Strength']), {prompt: '-- select coach type --'}, class: 'form-control') %>
+        </div>
+        <%= f.submit "Create Coach", class: 'btn btn-default', name: 'publish' %>
+      <% end %>
+    </div>
+  </div>
+</div>

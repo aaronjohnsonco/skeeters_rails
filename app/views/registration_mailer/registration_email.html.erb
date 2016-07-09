@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+	<h2>New Registration Form</h2>
+	<h3>Player Information</h3>
+	<p>Team: <%= @candidate.team %></p>
+	<p>Player Name: <%= @candidate.player_name %></p>
+	<p>Player DOB: <%= @candidate.dob %></p>
+	<p>Player Experience: <%= @candidate.player_experience %></p>
+	<p>City of Residence: <%= @candidate.city_of_residence %></p>
+	<h3>Parent or Guardian Information</h3>
+	<h4>Primary Contact</h4>
+	<p>Name: <%= @candidate.contact1_name %></p>
+	<p>Phone: <%= @candidate.contact1_phone %></p>
+	<p>Email: <%= @candidate.contact1_email %></p>
+	<h4>Secondary Contact</h4>
+	<p>Name: <%= @candidate.contact2_name %></p>
+	<p>Phone: <%= @candidate.contact2_phone %></p>
+	<p>Email: <%= @candidate.contact2_email %></p>
+</body>
+</html>

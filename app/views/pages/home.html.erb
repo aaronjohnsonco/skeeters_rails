@@ -1,0 +1,137 @@
+<div class="banner-container-sub">
+  <%= render 'partials/navbar' %>
+  <div class="home-top-sub">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="latoblack white home-header">Skeeters Baseball Club</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="latolight">About SBC</h2>
+        <%= image_tag "skeetersAll.png", width: '100%', class: 'team-img' %>
+        <p class="latolight about-text">The Skeeters Baseball Club was formed to provide players from Southern Williamson and Maury County an
+          opportunity to compete in select tournament baseball in a family environment. In addition to competing at the
+          highest level on the field, the SBC strives to make its players the best they can be off the field as well.
+          The SBC works diligently to instill teamwork, discipline, integrity, sportsmanship and work ethic. It is the
+          goal of our organization to provide these players an exceptional learning environment, which will lay the
+          foundation for future success in life as well as baseball.</p>
+          <p class="latolight main-text"><%= link_to "Follow us on Facebook", "https://www.facebook.com/skeetersbaseballclub", target: "_blank" %></p>
+      </div>
+      <div class="col-md-offset-1 col-md-5">
+        <h2 class="latolight">Announcements</h2>
+        <% if @posts.blank? %>
+          <p class="post-title">No new announcements.</p>
+        <% end %>
+        <% for post in @posts %>
+          <p class="post-title"><%= link_to post.title, post %></p>
+          <p class="post-description">Posted on <%= post.date.strftime("%B %-d") %></p>
+        <% end %>
+        <h2 class="latolight">Upcoming Events</h2>
+        <% if @events.blank? %>
+          <p class="post-title">No events scheduled.</p>
+        <% end %>
+        <% for event in @events %>
+          <p class="post-title"><%= link_to event.title, event %></p>
+          
+            <% if event.end_date.blank? %>
+            <p class="post-description"><%= event.start_date.strftime('%B %-d') %></p>
+          <% elsif event.end_date.present? && event.start_date.strftime('%B') === event.end_date.strftime('%B') %>
+            <p class="post-description"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%-d') %></p>
+          <% elsif event.end_date.present? && event.start_date.strftime('%B') != event.end_date.strftime('%B') %>
+            <p class="post-description"><%= event.start_date.strftime('%B %-d') %> - <%= event.end_date.strftime('%B %-d') %></p>
+          <% end %>
+          
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sponsor-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sponsor-list">
+          <h2 class="latolight">We proudly thank our sponsors...</h2>
+          <div class="row">
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "bridgemore_300x.jpg", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "kemp_300x.jpg", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "pinn_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "mjfrick_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "avcare_300x.jpg", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "suntrust_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "extreme_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "aca_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "farmer_300.png", class: "sponsor-img" %>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <%= image_tag "all_pest_300x.jpg", class: "sponsor-img" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--<div>
+  <div>
+    <div class="row">
+      <div class="col-md-offset-1 col-md-4">
+        <h2>Sponsors</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag "entrust_300.png", class: "sponsor-img" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->

@@ -1,0 +1,40 @@
+<%= render 'dashboard_navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="latoblack">Dashboard</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <h2 class="latolight">Recent Posts</h2>
+      <% for post in @recent_posts %>
+        <p class="latolight main-text"><%= post.title %></p>
+      <% end %>
+      <p><%= link_to "View all posts", dashboard_posts_path %></p>
+      <h2 class="latolight">Upcoming Events</h2>
+      <p>View all events</p>
+    </div>
+    <div class="col-md-3">
+      <h2 class="latolight">Teams</h2>
+      <div class="team-list">
+        <% for team in @current_teams %>
+          <p>
+            <%= team.name %> <%= link_to "Edit", "" %>
+          </p>
+        <% end %>
+      </div>
+      <div class="add-team-form">
+        <%= form_for Team.new do |f| %>
+          <div class="form-group">
+            <label class="sr-only">Name</label>
+            <%= f.text_field :name, class: 'form-control', placeholder: "Team Name" %>
+          </div>
+          <%= f.submit "Add Team", class: "btn btn-primary btn-sm" %>
+          <%= link_to "Cancel", "",class: "btn btn-default btn-sm", id: "close-form" %>
+        <% end %>
+      </div>
+      <%= link_to "Add Team", "", class: "btn btn-default btn-sm", id: "add-team-btn" %> 
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.signup-container {
+	padding:30px;
+	border-radius:2px;
+	background-color:#e7e7e7;
+	margin-top:100px;
+	h2 {
+		margin-top:0;
+		margin-bottom:15px;
+		color:#222;
+	}
+	input {
+		border-color:#fff;
+		border-radius:2px;
+		font-family:'latolight';
+		box-shadow:none;
+	}
+	input:focus {
+		box-shadow:none;
+		border-color:#fff;
+	}
+}
+
+@media (max-width: 767px) {
+  .signup-container {
+	padding:30px;
+	border-radius:2px;
+	background-color:#e7e7e7;
+	margin-top:10px;
+	h2 {
+		margin-top:0;
+		margin-bottom:15px;
+		color:#222;
+	}
+	input {
+		border-color:#fff;
+		border-radius:2px;
+		font-family:'latolight';
+		box-shadow:none;
+	}
+	input:focus {
+		box-shadow:none;
+		border-color:#fff;
+	}
+}
+}
