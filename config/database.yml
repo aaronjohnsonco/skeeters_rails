@@ -20,7 +20,11 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+<<<<<<< HEAD
   username: ajohnson
+=======
+  username: adjohns
+>>>>>>> 0c62b04860568b9c5286394676aa878822b620f5
   password:
   host: localhost
 
