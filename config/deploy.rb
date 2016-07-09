@@ -2,11 +2,11 @@
 # lock '3.1.0'
 
 set :application, 'skeetersbc'
-<<<<<<< HEAD
+
 set :repo_url, 'https://aaronjohnsonco:h0lein0ne@github.com/aaronjohnsonco/skeeters_rails.git'
-=======
+
 set :repo_url, 'https://aaronjohnsonco:h0lein0ne@github.com/aaronjohnsonco/skeeters_rails.git'
->>>>>>> 0c62b04860568b9c5286394676aa878822b620f5
+
 
 set :deploy_to, '/home/deployer/skeetersbc'
 
