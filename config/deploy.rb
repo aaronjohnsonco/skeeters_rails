@@ -5,7 +5,7 @@ set :application, 'skeetersbc'
 <<<<<<< HEAD
 set :repo_url, 'https://aaronjohnsonco:h0lein0ne@github.com/aaronjohnsonco/skeeters_rails.git'
 =======
-set :repo_url, 'https://insomniapplabs:h0lein0ne@github.com/insomniapplabs/skeeters_rails.git'
+set :repo_url, 'https://aaronjohnsonco:h0lein0ne@github.com/aaronjohnsonco/skeeters_rails.git'
 >>>>>>> 0c62b04860568b9c5286394676aa878822b620f5
 
 set :deploy_to, '/home/deployer/skeetersbc'
@@ -46,7 +46,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 <<<<<<< HEAD
 #namespace :figaro do
 =======
-#namespace :figaro do      
+#namespace :figaro do
 >>>>>>> 0c62b04860568b9c5286394676aa878822b620f5
 #   desc "Transfer Figaro's application.yml to shared/config"
 #   task :upload do
